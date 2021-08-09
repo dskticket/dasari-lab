@@ -1,0 +1,17 @@
+---
+- hosts: all #localhost #repo
+  become: yes
+  tasks:
+
+  - name: Spinning The New AWS-VM
+    ec2:
+     key_name: dasari-mumbai #vspdsk #kumar-nov-key #mykey
+     instance_type: t2.micro
+     count: 3
+     monitoring: yes
+     image: ami-06a0b4e3b7eb7a300 #ami-0a54aef4ef3b5f881 #ami-123456
+     wait: yes
+     region: "ap-south-1" #us-east-2"
+     vpc_subnet_id: subnet-14654658 #subnet-f43c338e #subnet-29e63245
+     assign_public_ip: yes
+
