@@ -1,0 +1,29 @@
+---
+- hosts: all #localhost
+
+  tasks:
+
+  - name: Getting The Volument Details
+    ec2_vol_info:
+      region: "ap-south-1"
+      filters:
+         volume-id: vol-079adcd512726b94d
+         #         vvol-079adcd512726b94dol-026db033fa151b22c #026db033fa151b22c #vol-04a7a66e52c4fcd2e
+    register: kk
+
+  - debug:
+       var: kk
+
+
+  - name: Deleting VOLUME by Volume-ID
+    ec2_vol:
+       region: ap-south-1
+       id: vol-079adcd512726b94d #vol-026db033fa151b22c #026db033fa151b22c #vol-04a7a66e52c4fcd2e
+       state: absent
+
+
+
+
+
+
+
