@@ -1,7 +1,5 @@
 ---
 - hosts: all #localhost
-  become_user: root
-  become: yes
   vars:
      ins_id:
         - i-03bc30fd07ba213bd
